@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dhanalakshmi G - Electronics and Communication Engineering Student Portfolio">
+<title>Dhanalakshmi G | ECE Portfolio</title>
+<style>
+:root{
+  --bg:#07111f;
+  --bg2:#0c1b2e;
+  --card:rgba(255,255,255,.07);
+  --card2:rgba(255,255,255,.045);
+  --text:#eef6ff;
+  --muted:#a9bbcf;
+  --accent:#55d6be;
+  --accent2:#5ea7ff;
+  --line:rgba(255,255,255,.12);
+  --shadow:0 20px 60px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{
+  font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);
+  background:
+    radial-gradient(circle at 10% 10%,rgba(94,167,255,.16),transparent 30%),
+    radial-gradient(circle at 90% 20%,rgba(85,214,190,.13),transparent 28%),
+    linear-gradient(135deg,var(--bg),var(--bg2));
+  line-height:1.65;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  background:rgba(7,17,31,.78);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line)
+}
+.navbar{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:1.15rem;font-weight:800;letter-spacing:.5px}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:25px;list-style:none;font-size:.92rem;color:var(--muted)}
+.navlinks a:hover{color:var(--accent)}
+.hero{min-height:100vh;display:grid;place-items:center;padding:120px 0 70px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center}
+.badge{
+  display:inline-flex;padding:8px 14px;border:1px solid rgba(85,214,190,.35);
+  border-radius:999px;background:rgba(85,214,190,.08);color:var(--accent);
+  font-size:.82rem;font-weight:700;margin-bottom:20px
+}
+h1{font-size:clamp(3rem,7vw,5.8rem);line-height:.95;letter-spacing:-4px;margin-bottom:22px}
+h1 span{color:var(--accent)}
+.hero h2{font-size:clamp(1.2rem,2vw,1.65rem);font-weight:500;color:#cfe0f1;margin-bottom:18px}
+.hero p{color:var(--muted);max-width:680px;font-size:1.05rem}
+.buttons{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:12px 20px;border-radius:12px;border:1px solid var(--line);font-weight:700;transition:.2s}
+.btn.primary{background:var(--accent);color:#06201c;border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn.secondary{background:var(--card)}
+.profile-card{
+  position:relative;padding:34px;border:1px solid var(--line);border-radius:28px;
+  background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.035));
+  box-shadow:var(--shadow);overflow:hidden
+}
+.profile-card:before{
+  content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+  background:rgba(85,214,190,.18);filter:blur(40px);right:-80px;top:-70px
+}
+.avatar{
+  width:145px;height:145px;border-radius:50%;display:grid;place-items:center;
+  margin:0 auto 25px;border:1px solid rgba(85,214,190,.4);
+  background:linear-gradient(135deg,#102c45,#0d443f);
+  font-size:3.2rem;font-weight:800;color:var(--accent)
+}
+.profile-card h3{text-align:center;font-size:1.45rem}
+.profile-card .role{text-align:center;color:var(--muted);margin-top:5px}
+.quick{margin-top:25px;display:grid;gap:12px}
+.quick div{padding:12px 14px;background:var(--card2);border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:.9rem}
+section{padding:95px 0}
+.section-head{margin-bottom:40px}
+.kicker{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.76rem}
+.section-head h2{font-size:2.4rem;margin-top:7px;letter-spacing:-1px}
+.section-head p{color:var(--muted);max-width:700px;margin-top:8px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px}
+.card{
+  padding:28px;border:1px solid var(--line);border-radius:20px;
+  background:var(--card);box-shadow:0 12px 35px rgba(0,0,0,.14)
+}
+.card p{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{text-align:center;padding:22px 12px;border-radius:16px;background:var(--card2);border:1px solid var(--line)}
+.stat strong{display:block;font-size:1.7rem;color:var(--accent)}
+.stat small{color:var(--muted)}
+.timeline{position:relative;margin-left:12px;padding-left:28px;border-left:1px solid rgba(255,255,255,.16)}
+.timeline-item{position:relative;margin-bottom:28px}
+.timeline-item:before{content:"";position:absolute;left:-35px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(85,214,190,.1)}
+.timeline-item h3{font-size:1.15rem}
+.timeline-item .meta{color:var(--accent2);font-size:.86rem;margin:4px 0}
+.timeline-item p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill-card h3{margin-bottom:15px}
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tag{padding:7px 11px;border-radius:999px;background:rgba(94,167,255,.1);border:1px solid rgba(94,167,255,.22);color:#cce1ff;font-size:.82rem}
+.project{
+  min-height:300px;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(145deg,rgba(94,167,255,.1),rgba(85,214,190,.05))
+}
+.project-icon{font-size:2.5rem;margin-bottom:20px}
+.project h3{font-size:1.5rem;margin-bottom:8px}
+.project p{color:var(--muted)}
+.feature-list{margin:18px 0 0 18px;color:var(--muted)}
+.feature-list li{margin:5px 0}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cert{border-top:3px solid var(--accent)}
+.cert .provider{color:var(--accent2);font-weight:700;margin:7px 0}
+.cert p{color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-box{display:flex;gap:14px;align-items:center;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:16px}
+.contact-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(85,214,190,.1);color:var(--accent);font-size:1.15rem}
+.contact-box small{display:block;color:var(--muted)}
+.contact-box a,.contact-box strong{word-break:break-word}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:.9rem}
+@media(max-width:850px){
+  .navlinks{display:none}
+  .hero-grid,.about-grid,.contact{grid-template-columns:1fr}
+  .hero{padding-top:105px}
+  .profile-card{max-width:500px;margin:auto}
+}
+@media(max-width:600px){
+  section{padding:70px 0}
+  h1{letter-spacing:-2px}
+  .grid,.cert-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+  .section-head h2{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container navbar">
+    <div class="logo">Dhanalakshmi<span>.</span></div>
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">ECE STUDENT • EMBEDDED SYSTEMS • EV TECHNOLOGY</div>
+      <h1>Hello, I'm <span>Dhanalakshmi</span></h1>
+      <h2>B.E. Electronics & Communication Engineering Student</h2>
+      <p>
+        A motivated engineering student with practical exposure to Embedded Systems
+        and developing expertise in Battery Management Systems and Electric Vehicle technology.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#projects">View My Project</a>
+        <a class="btn secondary" href="#contact">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <div class="avatar">DG</div>
+      <h3>Dhanalakshmi G</h3>
+      <div class="role">B.E. ECE • CGPA 8.5</div>
+      <div class="quick">
+        <div>📍 Dharmapuri, Tamil Nadu</div>
+        <div>⚡ Embedded Systems & BMS</div>
+        <div>🚗 Advanced EV Manufacturing</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">About Me</div>
+      <h2>Engineering with curiosity & purpose.</h2>
+      <p>Building a strong foundation in electronics, embedded technology and future mobility.</p>
+    </div>
+    <div class="about-grid">
+      <div class="card">
+        <p>
+          I am currently pursuing B.E. in Electronics and Communication Engineering at
+          EASA College of Engineering and Technology, Coimbatore. Alongside academics,
+          I have gained practical internship experience in Embedded Systems and completed
+          professional training in Advanced EV Manufacturing.
+        </p>
+        <br>
+        <p>
+          My career goal is to begin in Embedded Systems, Electric Vehicles or Battery
+          Management Systems and contribute to innovative engineering projects.
+        </p>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>8.5</strong><small>CGPA</small></div>
+        <div class="stat"><strong>120h</strong><small>EV Training</small></div>
+        <div class="stat"><strong>1</strong><small>Major Project</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Education</div>
+      <h2>Academic Journey</h2>
+    </div>
+    <div class="card">
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>B.E. Electronics and Communication Engineering</h3>
+          <div class="meta">EASA College of Engineering and Technology, Coimbatore • Pursuing</div>
+          <p>CGPA: <strong>8.5</strong> • Up to 7th semester</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Higher Secondary – HSC</h3>
+          <div class="meta">PKV GHSS Mookareddipatti Girls</div>
+          <p>Percentage: <strong>85%</strong></p>
+        </div>
+        <div class="timeline-item">
+          <h3>Secondary School – SSLC</h3>
+          <div class="meta">PKV GHSS Mookareddipatti Girls</div>
+          <p>Percentage: <strong>90%</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Expertise</div>
+      <h2>Technical Skills</h2>
+    </div>
+    <div class="grid">
+      <div class="card skill-card">
+        <h3>Core Technical</h3>
+        <div class="tags">
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">Battery Management Systems</span>
+          <span class="tag">EV Technology</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h3>Software & Tools</h3>
+        <div class="tags">
+          <span class="tag">MS Word</span>
+          <span class="tag">MS Excel</span>
+          <span class="tag">MS PowerPoint</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Experience</div>
+      <h2>Internship</h2>
+    </div>
+    <div class="card">
+      <h3>Embedded Systems Intern</h3>
+      <div class="meta" style="color:var(--accent2);margin:5px 0 15px">Emertxe LMS</div>
+      <p>
+        Completed practical internship training in Embedded Systems principles with
+        hands-on exposure to hardware and software development.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Featured Work</div>
+      <h2>Project</h2>
+      <p>A practical hardware project focused on fuel dispensing transparency.</p>
+    </div>
+    <div class="card project">
+      <div>
+        <div class="project-icon">⛽</div>
+        <h3>Petrol Scam Detector</h3>
+        <p>A real-time hardware monitoring system using a fuel flow sensor to measure petrol dispensed.</p>
+        <ul class="feature-list">
+          <li>Measures fuel quantity using a fuel flow sensor.</li>
+          <li>Calculates fuel volume dynamically.</li>
+          <li>Displays the measured quantity on an LCD.</li>
+          <li>Helps verify billing accuracy and detect dispensing discrepancies.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Learning</div>
+      <h2>Certifications</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="card cert">
+        <h3>Advanced EV Manufacturing Skilling Programme</h3>
+        <div class="provider">GTT Foundation • Supported by Accenture</div>
+        <p><strong>120 Hours</strong></p>
+        <p>Training covering EV Architecture, Battery Management Systems, Manufacturing & Quality Processes, and Automotive Standards.</p>
+      </div>
+      <div class="card cert">
+        <h3>Artificial Intelligence Fundamentals</h3>
+        <div class="provider">IBM SkillsBuild</div>
+        <p><strong>Issued: July 18, 2026</strong></p>
+        <p>Certification covering fundamental concepts of Artificial Intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="activities">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Beyond Academics</div>
+      <h2>Activities & Workshops</h2>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>🏆 Project Expo</h3><p>Participated in Project Expo hosted at EASA College of Engineering and Technology.</p></div>
+      <div class="card"><h3>🔧 Technical Workshop</h3><p>Attended hands-on technical training in Home Appliance & AC Service Repair and JVR Robotics.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Contact</div>
+      <h2>Let's connect.</h2>
+      <p>Open to opportunities in Embedded Systems, EV Technology and Battery Management Systems.</p>
+    </div>
+    <div class="contact">
+      <div class="contact-box"><div class="contact-icon">✉</div><div><small>Email</small><a href="mailto:dhanalakshmi934244@gmail.com">dhanalakshmi934244@gmail.com</a></div></div>
+      <div class="contact-box"><div class="contact-icon">☎</div><div><small>Mobile</small><strong>+91 9342442154</strong></div></div>
+      <div class="contact-box"><div class="contact-icon">in</div><div><small>LinkedIn</small><a href="https://linkedin.com/in/dhanalakshmi-gm" target="_blank">linkedin.com/in/dhanalakshmi-gm</a></div></div>
+      <div class="contact-box"><div class="contact-icon">⌖</div><div><small>Location</small><strong>Dharmapuri, Tamil Nadu</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 Dhanalakshmi G • ECE Portfolio</div>
+</footer>
+
+</body>
+</html>
